@@ -8,7 +8,7 @@ const Spotify = () => {
    const [loading, spotify, spotifyError] = useSpotify();
 
    return (
-      <div className="flex items-center gap-x-4">
+      <div className="flex items-center gap-x-4 font-karla">
          <AnimatePresence mode="wait">
             {spotifyError ? (
                <motion.span
@@ -61,7 +61,7 @@ const Spotify = () => {
          <AnimatePresence mode="wait">
             {spotifyError || !spotify || loading ? (
                <span className={clsx(loading && 'animate-pulse')}>
-                  <i className="fa-brands text-xl text-green-500 fa-spotify"></i>
+                  <i className="text-xl text-green-500 fa-brands fa-spotify"></i>
                </span>
             ) : (
                <motion.img
@@ -71,7 +71,7 @@ const Spotify = () => {
                   exit={{ opacity: 0, scale: 0.75 }}
                   transition={{ ease: 'easeInOut', duration: 0.3 }}
                   src={spotify.image[0]['#text']}
-                  className="h-8 w-8 rounded-lg shadow object-cover will-change"
+                  className="object-cover w-8 h-8 rounded-lg shadow will-change"
                />
             )}
          </AnimatePresence>

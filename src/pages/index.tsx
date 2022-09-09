@@ -8,19 +8,19 @@ const Index: NextPage = () => {
    return (
       <Box>
          <Nav />
-         <div className="mt-24 max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 w-full">
+         <div className="max-w-4xl mx-auto mt-24">
+            <div className="grid w-full grid-cols-1 gap-y-6 sm:grid-cols-2">
                <div>
-                  <h1 className="text-6xl font-bold tracking-tighter">
+                  <h1 className="text-6xl font-bold tracking-tighter font-karla">
                      Vignesh
                   </h1>
-                  <h2 className="text-3xl font-light tracking-tighter">
+                  <h2 className="text-3xl font-light tracking-tighter font-karla">
                      Wadhwani
                   </h2>
-                  <div className="flex items-center gap-x-6 mt-12">
+                  <div className="flex items-center mt-12 gap-x-6">
                      <Tooltip text="GitHub" placement="bottom">
                         <a
-                           className="text-xl inline-block transition duration-200 ease-linear will-change hover:rotate-6 hover:scale-105 hover:text-white text-trueGray-200"
+                           className="inline-block text-xl transition duration-200 ease-linear will-change hover:rotate-6 hover:scale-105 hover:text-white text-trueGray-200"
                            target="_blank"
                            href="https://github.com"
                         >
@@ -29,7 +29,7 @@ const Index: NextPage = () => {
                      </Tooltip>
                      <Tooltip text="Linked In" placement="bottom">
                         <a
-                           className="text-xl inline-block transition duration-200 ease-linear will-change hover:rotate-6 hover:scale-105 hover:text-white text-trueGray-200"
+                           className="inline-block text-xl transition duration-200 ease-linear will-change hover:rotate-6 hover:scale-105 hover:text-white text-trueGray-200"
                            target="_blank"
                            href="https://linkedin.com"
                         >
@@ -38,8 +38,8 @@ const Index: NextPage = () => {
                      </Tooltip>
                   </div>
                </div>
-               <div className="flex justify-end flex-col">
-                  <h3 className="text-lg text-trueGray-400 font-medium leading-7">
+               <div className="flex flex-col justify-end">
+                  <h3 className="text-lg font-medium leading-7 text-trueGray-400">
                      I'm a 19-year-old full-stack engineer in love with
                      architecting and building scalable applications, beautiful
                      interfaces and learning anything tech.
@@ -51,9 +51,9 @@ const Index: NextPage = () => {
                   </div>
                </div>
             </div>
-            <hr className="mt-14 mb-6 border-t border-base-800" />
-            <div className="flex items-center flex-wrap gap-x-4">
-               <div className="text-xs text-trueGray-400 font-medium">
+            <hr className="mb-6 border-t mt-14 border-base-800" />
+            <div className="flex flex-wrap items-center gap-x-4">
+               <div className="text-xs font-medium text-trueGray-400">
                   Jump To
                </div>
                <div className="flex items-center gap-x-2">
@@ -78,13 +78,11 @@ const Index: NextPage = () => {
                </div>
             </div>
             <div className="mt-24">
-               <h1 className="text-4xl font-semibold tracking-wide">
-                  Projects
-               </h1>
-               <h2 className="tracking-tight text-sm text-trueGray-400 font-medium mt-2">
+               <h1 className="text-5xl font-semibold font-karla">Projects</h1>
+               <h2 className="mt-2 text-sm font-medium tracking-tight text-trueGray-400">
                   A collection of my personal or professional projects.
                </h2>
-               <div className="mt-10 grid grid-cols-2 gap-4">
+               <div className="grid grid-cols-2 gap-4 mt-10">
                   <div className="w-full p-4 rounded-2xl bg-base-700">
                      asdsas
                   </div>

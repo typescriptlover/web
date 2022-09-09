@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app';
 
-import '@/styles/inter.css';
+import '@/styles/fonts/inter.css';
+import '@/styles/fonts/karla.css';
 import '@/styles/tailwind.css';
 
 import Meta from '@/components/Meta';

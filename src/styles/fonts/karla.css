@@ -1,0 +1,106 @@
+@font-face {
+   font-family: 'Karla';
+   font-style: normal;
+   font-weight: 200;
+   font-display: swap;
+   src: url('karla/Karla-ExtraLight.ttf');
+}
+
+@font-face {
+   font-family: 'Karla';
+   font-style: italic;
+   font-weight: 200;
+   font-display: swap;
+   src: url('karla/Karla-ExtraLightItalic.ttf');
+}
+
+@font-face {
+   font-family: 'Karla';
+   font-style: normal;
+   font-weight: 300;
+   font-display: swap;
+   src: url('karla/Karla-Light.ttf');
+}
+@font-face {
+   font-family: 'Karla';
+   font-style: italic;
+   font-weight: 300;
+   font-display: swap;
+   src: url('karla/Karla-LightItalic.ttf');
+}
+
+@font-face {
+   font-family: 'Karla';
+   font-style: normal;
+   font-weight: 400;
+   font-display: swap;
+   src: url('karla/Karla-Regular.ttf');
+}
+
+@font-face {
+   font-family: 'Karla';
+   font-style: italic;
+   font-weight: 400;
+   font-display: swap;
+   src: url('karla/Karla-Italic.ttf');
+}
+
+@font-face {
+   font-family: 'Karla';
+   font-style: normal;
+   font-weight: 500;
+   font-display: swap;
+   src: url('karla/Karla-Medium.ttf');
+}
+@font-face {
+   font-family: 'Karla';
+   font-style: italic;
+   font-weight: 500;
+   font-display: swap;
+   src: url('karla/Karla-MediumItalic.ttf');
+}
+
+@font-face {
+   font-family: 'Karla';
+   font-style: normal;
+   font-weight: 600;
+   font-display: swap;
+   src: url('karla/Karla-SemiBold.ttf');
+}
+@font-face {
+   font-family: 'Karla';
+   font-style: italic;
+   font-weight: 600;
+   font-display: swap;
+   src: url('karla/Karla-SemiBoldItalic.ttf');
+}
+
+@font-face {
+   font-family: 'Karla';
+   font-style: normal;
+   font-weight: 700;
+   font-display: swap;
+   src: url('karla/Karla-Bold.ttf');
+}
+@font-face {
+   font-family: 'Karla';
+   font-style: italic;
+   font-weight: 700;
+   font-display: swap;
+   src: url('karla/Karla-BoldItalic.ttf');
+}
+
+@font-face {
+   font-family: 'Karla';
+   font-style: normal;
+   font-weight: 800;
+   font-display: swap;
+   src: url('karla/Karla-ExtraBold.ttf');
+}
+@font-face {
+   font-family: 'Karla';
+   font-style: italic;
+   font-weight: 800;
+   font-display: swap;
+   src: url('karla/Karla-ExtraBoldItalic.ttf');
+}
