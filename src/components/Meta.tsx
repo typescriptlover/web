@@ -2,7 +2,7 @@ import { FC } from 'react';
 import Head from 'next/head';
 import { NextSeo } from 'next-seo';
 
-import { SEO } from '@/config';
+import { SEO } from '@/lib/config';
 
 interface Props {
    title?: string;
