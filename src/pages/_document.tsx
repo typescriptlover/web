@@ -1,6 +1,6 @@
 import Document, { Html, Main, Head, NextScript } from 'next/document';
 
-import { SEO } from '@/config';
+import { SEO } from '@/lib/config';
 import Body from '@/layouts/Body';
 
 class Doc extends Document {
