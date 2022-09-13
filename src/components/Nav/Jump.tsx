@@ -5,6 +5,7 @@ import { useAtom } from 'jotai';
 import * as state from '@/lib/state';
 import clsx from 'clsx';
 import Tooltip from '../ui/Tooltip';
+import { Section } from '@/types/interfaces';
 
 const Jump: FC = () => {
    const [sections] = useAtom(state.sections);
@@ -46,6 +47,15 @@ const Jump: FC = () => {
       }
    }, [jumpEl, heroEl]);
 
+   function jumpTo(ref: Section['ref']) {
+      if (ref) {
+         ref.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+         });
+      }
+   }
+
    return (
       <AnimatePresence>
          {showJump && (
@@ -56,10 +66,11 @@ const Jump: FC = () => {
                transition={{ ease: 'easeInOut', duration: 0.2 }}
                className="fixed inset-x-0 px-5 flex items-center justify-center top-5 z-[1000]"
             >
-               <Tooltip text="Jump to" placement="bottom">
+               <Tooltip text="Jump to" placement="bottom" hideOnClick={false}>
                   <div className="flex items-center w-full max-w-xs space-x-[-1px] shadow-2xl">
                      {sections.map((section, sectionIndex) => (
                         <button
+                           onClick={() => jumpTo(section.ref)}
                            className={clsx(
                               'w-full bg-base-700/90 transition duration-150 ease-linear hover:bg-base-600 border border-base-600 text-white text-sm py-2.5 font-semibold',
                               sectionIndex === 0 && 'rounded-l-xl',
