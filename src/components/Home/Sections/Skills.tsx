@@ -5,7 +5,7 @@ const Skills: FC = () => {
    return (
       <Section
          title="Skills"
-         description="A list of technologies and tools i've learned and used to create projects."
+         description="A list of technologies and tools i've learned and used to create projects with."
       >
          asd
       </Section>
