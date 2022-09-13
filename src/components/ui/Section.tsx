@@ -34,7 +34,7 @@ const Section: FC<Props> = ({ title, description, children }) => {
    }, [ref, sections]);
 
    return (
-      <div className="py-4 group" ref={ref} id={title.toLowerCase()}>
+      <div className="py-8 group" ref={ref} id={title.toLowerCase()}>
          <h1 className="text-5xl font-semibold text-center font-karla sm:text-left">
             <span className="inline-block mr-3 text-4xl transition duration-150 ease-linear group-hover:text-trueGray-500 text-trueGray-600 rotate-6">
                #

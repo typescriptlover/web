@@ -5,7 +5,7 @@ import Skills from './Skills';
 
 const Sections: FC = () => {
    return (
-      <div id="sections" className="flex flex-col mt-24 gap-y-20">
+      <div id="sections" className="flex flex-col mt-20 gap-y-20">
          <About />
          <Projects />
          <Skills />
