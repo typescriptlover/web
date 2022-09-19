@@ -8,6 +8,7 @@ interface ProjectProps {
    description: string;
    tags: string[];
 }
+// TODO: make tags smoothly scrollable on the x axis
 const Project: FC<ProjectProps> = ({
    image,
    name,
@@ -53,6 +54,7 @@ const Project: FC<ProjectProps> = ({
    );
 };
 
+// TODO: better alternative to hardcoded projects
 const Projects: FC = () => {
    const projects: ProjectProps[] = [
       {

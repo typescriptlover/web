@@ -1,5 +1,6 @@
 import Animations from '@/components/ui/Animations';
 
+// TODO: better alternative to cluttered svgs
 const Skills = () => {
    return (
       <div key="skills" className="group">
