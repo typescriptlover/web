@@ -7,7 +7,7 @@ interface Props extends TippyProps {
    children: ReactElement;
    className?: string;
 }
-
+// TODO: make use of this component throughout the app for better ux
 const Tooltip: FC<Props> = ({ text, children, className, ...tippy }) => {
    const springConfig = { damping: 20, stiffness: 200 };
    const initial = {
