@@ -8,7 +8,6 @@ import Meta from '@/components/Meta';
 import FontAwesome from '@/components/FontAwesome';
 import Wrapper from '@/layouts/Wrapper';
 import Box from '@/layouts/Box';
-import Nav from '@/layouts/Nav';
 
 const App = ({ Component, pageProps }: AppProps) => {
    return (
@@ -17,7 +16,6 @@ const App = ({ Component, pageProps }: AppProps) => {
          <FontAwesome />
 
          <Wrapper>
-            <Nav />
             <Component {...pageProps} />
          </Wrapper>
       </Box>

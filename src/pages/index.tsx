@@ -1,18 +1,29 @@
 import type { NextPage } from 'next';
 
-import Container from '@/layouts/Container';
-import Jump from '@/components/Home/Jump';
+import { AnimatePresence } from 'framer-motion';
+import { useAtom } from 'jotai';
+
+import * as state from '@/lib/state';
+import Intro from '@/components/Home/Intro';
 import Hero from '@/components/Home/Hero';
+import Contact from '@/components/Home/Contact';
 import Sections from '@/components/Home/Sections';
 
 const Home: NextPage = () => {
+   const [intro] = useAtom(state.intro);
+
    return (
-      <Container>
-         <Hero />
-         <hr className="border-t mt-14 border-base-800" />
-         <Jump />
-         <Sections />
-      </Container>
+      <AnimatePresence mode="wait">
+         {intro ? (
+            <Intro />
+         ) : (
+            <div key="page">
+               <Hero />
+               <Contact />
+               <Sections />
+            </div>
+         )}
+      </AnimatePresence>
    );
 };
 

@@ -5,7 +5,11 @@ interface Props {
 }
 
 const Wrapper: FC<Props> = ({ children }) => {
-   return <div className="max-w-5xl py-6 mx-auto sm:py-10">{children}</div>;
+   return (
+      <div className="flex flex-col w-full max-w-2xl min-h-screen py-12 mx-auto">
+         {children}
+      </div>
+   );
 };
 
 export default Wrapper;

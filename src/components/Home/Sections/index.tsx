@@ -1,16 +1,13 @@
-import { FC } from 'react';
-import About from './About';
 import Projects from './Projects';
 import Skills from './Skills';
 
-const Sections: FC = () => {
+const index = () => {
    return (
-      <div id="sections" className="flex flex-col mt-20 gap-y-20">
-         <About />
+      <div className="flex flex-col mt-20 gap-y-16">
          <Projects />
          <Skills />
       </div>
    );
 };
 
-export default Sections;
+export default index;

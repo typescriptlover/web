@@ -58,11 +58,3 @@ export interface LastFMSong {
 export interface LastFMResponseBody {
    recenttracks: LastFMRecentTracks;
 }
-
-export interface Section {
-   name: string;
-   icon: string;
-   // TODO: put an actual type to this
-   ref: any;
-}
-export type Sections = Section[];

@@ -6,7 +6,7 @@ interface Props {
 
 const Body: FC<Props> = ({ children }) => {
    return (
-      <body className="flex flex-col min-h-screen px-5 text-white selection:bg-base-100/50 font-inter opacity-95 bg-base-1000">
+      <body className="px-8 text-white font-inter opacity-95 bg-base-1000 selection:bg-base-200/25">
          {children}
       </body>
    );
