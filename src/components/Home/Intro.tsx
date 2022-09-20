@@ -12,7 +12,7 @@ const Intro = () => {
 
    useEffect(() => {
       const unsubscribe = tinykeys(window, {
-         Ctrl: () => {
+         Control: () => {
             setIm(false);
             setTimeout(() => {
                setIntro(false);
