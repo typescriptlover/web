@@ -12,7 +12,7 @@ const Intro = () => {
 
    useEffect(() => {
       const unsubscribe = tinykeys(window, {
-         Space: () => {
+         Ctrl: () => {
             setIm(false);
             setTimeout(() => {
                setIntro(false);
@@ -71,7 +71,7 @@ const Intro = () => {
             <div className="mt-1 text-xs uppercase text-zinc-500 font-medium tracking-tight font-karla">
                press{' '}
                <span className="text-zinc-400 mx-1 py-0.5 px-1 bg-base-800 rounded">
-                  space
+                  ctrl
                </span>{' '}
                to skip intro
             </div>
