@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app';
 import '@/styles/fonts/inter.css';
 import '@/styles/fonts/karla.css';
 import '@/styles/tailwind.css';
+import '@/styles/global.css';
 
 import Meta from '@/components/Meta';
 import FontAwesome from '@/components/FontAwesome';
