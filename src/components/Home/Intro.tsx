@@ -42,14 +42,14 @@ const Intro = () => {
       >
          <div className="flex flex-col items-center gap-y-6">
             <Animations.FadeY
-               y={25}
+               y={15}
                duration={0.4}
                className="inline-flex items-center justify-center w-12 h-12 text-2xl border shadow rounded-xl will-change border-base-800 bg-base-900"
             >
                <span className="animate-wave will-change">👋</span>
             </Animations.FadeY>
             <Animations.FadeY
-               y={25}
+               y={15}
                duration={0.4}
                delay={0.3}
                noExit={true}
@@ -68,7 +68,7 @@ const Intro = () => {
                   </Animations.Layout>
                </AnimateSharedLayout>
             </Animations.FadeY>
-            <div className="mt-1 text-xs uppercase text-zinc-500 font-medium tracking-tight font-karla">
+            <div className="mt-1 text-xs font-medium tracking-tight uppercase text-zinc-500 font-karla">
                press{' '}
                <span className="text-zinc-400 mx-1 py-0.5 px-1 bg-base-800 rounded">
                   ctrl
