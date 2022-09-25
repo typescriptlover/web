@@ -64,4 +64,5 @@ export interface Project {
    type: string;
    description: string;
    active: string;
+   route: string;
 }

@@ -3,17 +3,21 @@ import { FC, useState } from 'react';
 import Animations from '@/components/ui/Animations';
 import { Project } from '@/types/interfaces';
 import projects from '@/data/projects';
+import { useRouter } from 'next/router';
+import Link from '@/components/ui/Link';
 
 interface ProjectProps {
    project: Project;
-   updateProject(project: Project): void;
 }
 
 // TODO: make tags smoothly scrollable on the x axis
-const Project: FC<ProjectProps> = ({ project, updateProject }) => {
+const Project: FC<ProjectProps> = ({ project }) => {
+   const router = useRouter();
+
    return (
-      <button
-         onClick={() => updateProject(project)}
+      <Link
+         href={`/project/${project.route}`}
+         scroll={false}
          className="flex flex-col w-full h-full py-5 text-left transition duration-200 ease-linear rounded-xl bg-base-850 hover:ring-4 focus:ring-4 hover:ring-base-850 focus:ring-base-850 group"
       >
          <div className="flex items-center justify-between w-full px-5">
@@ -43,18 +47,12 @@ const Project: FC<ProjectProps> = ({ project, updateProject }) => {
                {project.active}
             </div>
          </div>
-      </button>
+      </Link>
    );
 };
 
 // TODO: make project clickable to external project route
 const Projects: FC = () => {
-   const [project, setProject] = useState<false | Project>(false);
-
-   function updateProject(project: Project) {
-      setProject(project);
-   }
-
    return (
       <div key="projects">
          <Animations.FadeY
@@ -81,9 +79,9 @@ const Projects: FC = () => {
                   key={projectIndex}
                   y={60}
                   duration={0.4}
-                  delay={0.7 + 0.2 * projectIndex}
+                  delay={0.7 + 0.1 * projectIndex}
                >
-                  <Project project={project} updateProject={updateProject} />
+                  <Project project={project} />
                </Animations.FadeY>
             ))}
          </div>
