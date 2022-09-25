@@ -8,7 +8,7 @@ const Skills = () => {
             y={40}
             duration={0.4}
             delay={0.5}
-            className="flex items-center justify-between px-4 py-3 transition duration-200 ease-linear border rounded-lg bg-base-950 border-base-900"
+            className="flex items-center justify-between px-4 py-3 transition duration-200 ease-linear border-2 rounded-lg bg-base-950 border-base-900"
          >
             <div>
                <h1 className="text-2xl font-semibold tracking-tight font-karla">
@@ -26,7 +26,7 @@ const Skills = () => {
             y={60}
             duration={0.4}
             delay={0.7}
-            className="flex flex-wrap items-center gap-6 px-5 py-6 mt-4 rounded-lg bg-base-900"
+            className="flex flex-wrap items-center gap-6 px-5 py-6 mt-4 rounded-lg bg-base-850"
          >
             <div className="inline-flex items-center gap-x-2">
                <svg
@@ -129,17 +129,6 @@ const Skills = () => {
             </div>
             <div className="inline-flex items-center gap-x-2">
                <svg
-                  className="h-5 w-5 text-[#00DC82]"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-               >
-                  <path d="M9.078 3.965c-.588 0-1.177.289-1.514.867L.236 17.433c-.672 1.156.17 2.601 1.514 2.601h5.72a1.676 1.676 0 0 1-.35-2.117l5.547-9.513-2.076-3.572a1.734 1.734 0 0 0-1.513-.867zm7.407 2.922c-.487 0-.973.236-1.252.709L9.17 17.906c-.557.945.138 2.13 1.251 2.13h12.13c1.114 0 1.81-1.185 1.253-2.13l-6.067-10.31a1.437 1.437 0 0 0-1.252-.71z" />
-               </svg>
-               <span className="text-sm font-medium">Nuxt</span>
-            </div>
-            <div className="inline-flex items-center gap-x-2">
-               <svg
                   className="h-5 w-5 text-[#339933]"
                   fill="currentColor"
                   viewBox="0 0 24 24"
@@ -159,6 +148,18 @@ const Skills = () => {
                   <path d="M12.002 0a2.138 2.138 0 1 0 0 4.277 2.138 2.138 0 1 0 0-4.277zm8.54 4.931a2.138 2.138 0 1 0 0 4.277 2.138 2.138 0 1 0 0-4.277zm0 9.862a2.138 2.138 0 1 0 0 4.277 2.138 2.138 0 1 0 0-4.277zm-8.54 4.931a2.138 2.138 0 1 0 0 4.276 2.138 2.138 0 1 0 0-4.276zm-8.542-4.93a2.138 2.138 0 1 0 0 4.276 2.138 2.138 0 1 0 0-4.277zm0-9.863a2.138 2.138 0 1 0 0 4.277 2.138 2.138 0 1 0 0-4.277zm8.542-3.378L2.953 6.777v10.448l9.049 5.224 9.047-5.224V6.777zm0 1.601 7.66 13.27H4.34zm-1.387.371L3.97 15.037V7.363zm2.774 0 6.646 3.838v7.674zM5.355 17.44h13.293l-6.646 3.836z" />
                </svg>
                <span className="text-sm font-medium">GraphQL</span>
+            </div>
+            <div className="inline-flex items-center gap-x-2">
+               <svg
+                  className="h-5 w-5 text-[#2596BE]"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+               >
+                  <title>tRPC</title>
+                  <path d="M24 12c0 6.62-5.38 12-12 12S0 18.62 0 12 5.38 0 12 0s12 5.38 12 12ZM1.21 12A10.78 10.78 0 0 0 12 22.79 10.78 10.78 0 0 0 22.79 12 10.78 10.78 0 0 0 12 1.21 10.78 10.78 0 0 0 1.21 12Zm10.915-6.086 2.162 1.248a.25.25 0 0 1 .125.217v1.103l2.473 1.428a.25.25 0 0 1 .125.217v2.355l.955.551a.25.25 0 0 1 .125.217v2.496a.25.25 0 0 1-.125.217l-2.162 1.248a.25.25 0 0 1-.25 0l-.956-.552-2.472 1.427a.25.25 0 0 1-.25 0l-2.472-1.427-.956.552a.25.25 0 0 1-.25 0l-2.162-1.248a.25.25 0 0 1-.125-.217V13.25a.25.25 0 0 1 .125-.217l.955-.551v-2.355a.25.25 0 0 1 .125-.217l2.473-1.428V7.38a.25.25 0 0 1 .125-.217l2.162-1.248a.25.25 0 0 1 .25 0Zm1.268 10.049a.25.25 0 0 1-.125-.217V13.25a.25.25 0 0 1 .125-.217l2.16-1.248a.25.25 0 0 1 .25 0l.707.408v-1.922l-2.098-1.21v.814a.25.25 0 0 1-.125.217l-2.162 1.248a.25.25 0 0 1-.25 0l-2.162-1.248a.25.25 0 0 1-.125-.217V9.06L7.49 10.271v1.922l.707-.408a.25.25 0 0 1 .25 0l2.16 1.248a.25.25 0 0 1 .125.217v2.496a.25.25 0 0 1-.125.217l-.705.408L12 17.582l2.098-1.211ZM10.088 9.73l1.662.96V8.766l-1.662-.955Zm3.824 0V7.811l-1.662.955v1.924ZM12 6.418l-1.66.96 1.66.954 1.66-.954Zm-5.59 9.184 1.66.958v-1.921l-1.66-.956Zm3.822 0v-1.92l-1.662.957v1.923Zm-1.91-3.311-1.662.96 1.661.955 1.66-.956Zm5.446 3.31 1.66.96v-1.922l-1.66-.956Zm3.822 0v-1.918l-1.662.956v1.922Zm-1.912-3.31-1.66.96 1.66.955 1.66-.956Z" />
+               </svg>
+               <span className="text-sm font-medium">tRPC</span>
             </div>
             <div className="inline-flex items-center gap-x-2">
                <svg

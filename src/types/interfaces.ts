@@ -58,3 +58,10 @@ export interface LastFMSong {
 export interface LastFMResponseBody {
    recenttracks: LastFMRecentTracks;
 }
+
+export interface Project {
+   name: string;
+   type: string;
+   description: string;
+   active: string;
+}
