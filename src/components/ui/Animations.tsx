@@ -19,10 +19,11 @@ type LayoutProps = {
    layout: boolean | 'position' | 'size' | 'preserve-aspect' | undefined;
 } & DefaultProps;
 
+// TODO: add animation keys to global state for only rendering once even on route changes
 const Animations = {
    FadeY: ({ children, className, duration, delay, noExit, y }: Props<'y'>) => {
       return (
-         <motion.span
+         <motion.div
             initial={{ opacity: 0, y: y || 15 }}
             animate={{ opacity: 1, y: 0 }}
             exit={noExit ? undefined : { opacity: 0, y: y || 15 }}
@@ -31,15 +32,15 @@ const Animations = {
                duration: duration ?? 0.15,
                delay: delay ?? 0,
             }}
-            className={clsx(className, 'will-change inline-block')}
+            className={clsx(className ?? 'inline-block', 'will-change')}
          >
             {children}
-         </motion.span>
+         </motion.div>
       );
    },
    FadeX: ({ children, className, duration, delay, noExit, x }: Props<'x'>) => {
       return (
-         <motion.span
+         <motion.div
             initial={{ opacity: 0, x: x || 15 }}
             animate={{ opacity: 1, x: 0 }}
             exit={noExit ? undefined : { opacity: 0, x: x || 15 }}
@@ -48,15 +49,15 @@ const Animations = {
                duration: duration ?? 0.15,
                delay: delay ?? 0,
             }}
-            className={clsx(className, 'will-change inline-block')}
+            className={clsx(className ?? 'inline-block', 'will-change')}
          >
             {children}
-         </motion.span>
+         </motion.div>
       );
    },
    Scale: ({ children, className, delay, duration, scale }: Props<'scale'>) => {
       return (
-         <motion.span
+         <motion.div
             initial={{ opacity: 0, scale: scale || 0 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: scale || 0 }}
@@ -65,32 +66,31 @@ const Animations = {
                duration: duration ?? 0.15,
                delay: delay ?? 0,
             }}
-            className={clsx(className, 'will-change inline-block')}
+            className={clsx(className ?? 'inline-block', 'will-change')}
          >
             {children}
-         </motion.span>
+         </motion.div>
       );
    },
    Layout: ({
       children,
       className,
-      delay,
       duration,
       layoutId,
       layout,
    }: LayoutProps) => {
       return (
-         <motion.span
+         <motion.div
             layoutId={layoutId}
             layout={layout}
             transition={{
                ease: 'easeInOut',
                duration: duration ?? 0.4,
             }}
-            className={clsx(className, 'inline-block')}
+            className={clsx(className ?? 'inline-block')}
          >
             {children}
-         </motion.span>
+         </motion.div>
       );
    },
 };
