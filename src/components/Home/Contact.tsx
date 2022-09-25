@@ -34,7 +34,7 @@ const Contact = () => {
                </button>
             </Animations.FadeY>
             <Animations.FadeX x={-25} duration={0.4} delay={0.9}>
-               <span className="text-sm font-medium text-zinc-500 font-karla">
+               <span className="hidden text-sm font-medium sm:inline-block text-zinc-500 font-karla">
                   or scroll down
                </span>
             </Animations.FadeX>

@@ -8,7 +8,7 @@ const Skills = () => {
             y={40}
             duration={0.4}
             delay={0.5}
-            className="flex items-center justify-between px-4 py-3 transition duration-200 ease-linear border-2 rounded-lg bg-base-950 border-base-900"
+            className="flex items-center justify-between px-4 py-3 transition duration-200 ease-linear border-2 rounded-lg gap-x-4 bg-base-950 border-base-900"
          >
             <div>
                <h1 className="text-2xl font-semibold tracking-tight font-karla">
@@ -18,7 +18,7 @@ const Skills = () => {
                   A list of technologies, frameworks and tools i use.
                </h2>
             </div>
-            <div className="inline-flex items-center justify-center w-10 h-10 text-lg rounded-lg bg-base-800">
+            <div className="flex items-center justify-center flex-shrink-0 w-10 h-10 text-lg rounded-lg bg-base-800">
                🧠
             </div>
          </Animations.FadeY>
