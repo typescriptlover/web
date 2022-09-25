@@ -13,18 +13,18 @@ import { AnimatePresence, domAnimation, LazyMotion } from 'framer-motion';
 import Animations from '@/components/ui/Animations';
 import { useRouter } from 'next/router';
 
+import { usePreserveScroll } from '@/hooks/usePreserveScroll';
+
 const App = ({ Component, pageProps }: AppProps) => {
    const router = useRouter();
+
+   usePreserveScroll();
 
    return (
       <Box>
          <Meta />
          <FontAwesome />
-         <AnimatePresence
-            mode="wait"
-            initial={false}
-            onExitComplete={() => window.scrollTo(0, 0)}
-         >
+         <AnimatePresence mode="wait" initial={false}>
             <Animations.Scale
                key={router.route}
                scale={0.75}
