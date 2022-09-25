@@ -1,7 +1,8 @@
-import { AnimatePresence, AnimateSharedLayout } from 'framer-motion';
+import { AnimatePresence, LayoutGroup } from 'framer-motion';
 import { useAtom } from 'jotai';
 import { useState, useEffect } from 'react';
 import tinykeys from 'tinykeys';
+import clsx from 'clsx';
 
 import * as state from '@/lib/state';
 import Animations from '../ui/Animations';
@@ -55,7 +56,7 @@ const Intro = () => {
                noExit={true}
                className="text-3xl font-semibold tracking-tight whitespace-pre will-change"
             >
-               <AnimateSharedLayout>
+               <LayoutGroup>
                   <AnimatePresence>
                      {im && (
                         <Animations.FadeX x={-25} duration={0.4}>
@@ -66,9 +67,14 @@ const Intro = () => {
                   <Animations.Layout layoutId="name" layout="position">
                      Vignesh.
                   </Animations.Layout>
-               </AnimateSharedLayout>
+               </LayoutGroup>
             </Animations.FadeY>
-            <div className="mt-1 text-xs font-medium tracking-tight uppercase text-zinc-500 font-karla">
+            <div
+               className={clsx(
+                  'mt-1 text-xs font-medium tracking-tight uppercase text-zinc-500 font-karla',
+                  !intro && 'opacity-0'
+               )}
+            >
                press{' '}
                <span className="text-zinc-400 mx-1 py-0.5 px-1 bg-base-800 rounded">
                   ctrl
