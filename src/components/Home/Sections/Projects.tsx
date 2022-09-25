@@ -59,6 +59,8 @@ const Projects: FC = () => {
             y={40}
             duration={0.4}
             delay={0.5}
+            animationKey="projectsTop"
+            once={true}
             className="flex items-center justify-between px-4 py-3 transition duration-200 ease-linear border-2 rounded-lg gap-x-4 bg-base-950 border-base-900"
          >
             <div>
@@ -80,6 +82,8 @@ const Projects: FC = () => {
                   y={60}
                   duration={0.4}
                   delay={0.7 + 0.1 * projectIndex}
+                  animationKey={project.name}
+                  once={true}
                >
                   <Project project={project} />
                </Animations.FadeY>

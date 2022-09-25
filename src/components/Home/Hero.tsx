@@ -18,6 +18,8 @@ const Hero = () => {
                   y={10}
                   duration={0.4}
                   delay={0.2}
+                  animationKey="lastname"
+                  once={true}
                   className="-mt-1 text-xl font-light tracking-tight font-karla"
                >
                   Wadhwani
@@ -29,6 +31,8 @@ const Hero = () => {
                y={25}
                duration={0.4}
                delay={0.5}
+               animationKey="description"
+               once={true}
                className="leading-7 text-zinc-300"
             >
                I'm a 19-year-old{' '}

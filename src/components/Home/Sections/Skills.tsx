@@ -8,6 +8,8 @@ const Skills = () => {
             y={40}
             duration={0.4}
             delay={0.5}
+            animationKey="skillsTop"
+            once={true}
             className="flex items-center justify-between px-4 py-3 transition duration-200 ease-linear border-2 rounded-lg gap-x-4 bg-base-950 border-base-900"
          >
             <div>
@@ -26,6 +28,8 @@ const Skills = () => {
             y={60}
             duration={0.4}
             delay={0.7}
+            animationKey="skills"
+            once={true}
             className="flex flex-wrap items-center gap-6 px-5 py-6 mt-4 rounded-lg bg-base-850"
          >
             <div className="inline-flex items-center gap-x-2">

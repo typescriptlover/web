@@ -27,30 +27,60 @@ const Contact = () => {
    return (
       <div key="contact" className="flex items-center justify-between mt-8">
          <div className="inline-flex items-center gap-x-4">
-            <Animations.FadeY y={25} duration={0.4} delay={0.8}>
+            <Animations.FadeY
+               y={25}
+               duration={0.4}
+               delay={0.8}
+               animationKey="contact"
+               once={true}
+            >
                <button className="py-2.5 flex items-center group tracking-tight ring-8 shadow-2xl ring-base-800 ring-opacity-20 text-sm px-4 font-semibold rounded-xl bg-base-900 border-2 transition duration-200 ease-linear hover:border-transparent focus:border-transparent hover:ring-2 focus:ring-2 hover:ring-base-800 focus:ring-base-800 hover:ring-opacity-100 focus:ring-opacity-100 border-base-800">
                   Contact me
                   <ContactSVG />
                </button>
             </Animations.FadeY>
-            <Animations.FadeX x={-25} duration={0.4} delay={0.9}>
+            <Animations.FadeX
+               x={-25}
+               duration={0.4}
+               delay={0.9}
+               animationKey="scrollDown"
+               once={true}
+            >
                <span className="hidden text-sm font-medium sm:inline-block text-zinc-500 font-karla">
                   or scroll down
                </span>
             </Animations.FadeX>
          </div>
          <div className="inline-flex items-center gap-x-4">
-            <Animations.Scale scale={0.5} duration={0.4} delay={1}>
+            <Animations.Scale
+               scale={0.5}
+               duration={0.4}
+               delay={1}
+               animationKey="github"
+               once={true}
+            >
                <a className="text-lg transition duration-200 ease-linear text-zinc-400 hover:text-white">
                   <i className="fa-brands fa-github"></i>
                </a>
             </Animations.Scale>
-            <Animations.Scale scale={0.5} duration={0.4} delay={1.1}>
+            <Animations.Scale
+               scale={0.5}
+               duration={0.4}
+               delay={1.1}
+               animationKey="linkedIn"
+               once={true}
+            >
                <a className="text-lg transition duration-200 ease-linear text-zinc-400 hover:text-white">
                   <i className="fa-brands fa-linkedin-in"></i>
                </a>
             </Animations.Scale>
-            <Animations.Scale scale={0.5} duration={0.4} delay={1.2}>
+            <Animations.Scale
+               scale={0.5}
+               duration={0.4}
+               delay={1.2}
+               animationKey="discord"
+               once={true}
+            >
                <a className="text-lg transition duration-200 ease-linear text-zinc-400 hover:text-white">
                   <i className="fa-brands fa-discord"></i>
                </a>

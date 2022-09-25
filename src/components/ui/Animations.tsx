@@ -1,6 +1,9 @@
-import { ReactNode, RefObject } from 'react';
+import { ReactNode, RefObject, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import clsx from 'clsx';
+import { useAtom } from 'jotai';
+
+import * as state from '@/lib/state';
 
 type DefaultProps = {
    children: ReactNode;
@@ -8,6 +11,8 @@ type DefaultProps = {
    duration?: number;
    delay?: number;
    noExit?: true;
+   animationKey?: string;
+   once?: true;
 };
 
 type Props<T extends string> = {
@@ -19,14 +24,37 @@ type LayoutProps = {
    layout: boolean | 'position' | 'size' | 'preserve-aspect' | undefined;
 } & DefaultProps;
 
-// TODO: add animation keys to global state for only rendering once even on route changes
 const Animations = {
-   FadeY: ({ children, className, duration, delay, noExit, y }: Props<'y'>) => {
+   FadeY: ({
+      children,
+      className,
+      duration,
+      delay,
+      noExit,
+      animationKey,
+      once,
+      y,
+   }: Props<'y'>) => {
+      const [animations, setAnimations] = useAtom(state.animations);
+
+      const disabled = useMemo(() => {
+         if (once && animationKey && animations.includes(animationKey)) {
+            return true;
+         }
+         return false;
+      }, [animations, once, animationKey]);
+
+      useEffect(() => {
+         if (once && animationKey && !animations.includes(animationKey)) {
+            setAnimations([...animations, animationKey]);
+         }
+      }, [animations, once, animationKey]);
+
       return (
          <motion.div
-            initial={{ opacity: 0, y: y || 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={noExit ? undefined : { opacity: 0, y: y || 15 }}
+            initial={disabled ? false : { opacity: 0, y: y || 15 }}
+            animate={disabled ? false : { opacity: 1, y: 0 }}
+            exit={noExit || disabled ? undefined : { opacity: 0, y: y || 15 }}
             transition={{
                ease: 'easeInOut',
                duration: duration ?? 0.15,
@@ -38,12 +66,36 @@ const Animations = {
          </motion.div>
       );
    },
-   FadeX: ({ children, className, duration, delay, noExit, x }: Props<'x'>) => {
+   FadeX: ({
+      children,
+      className,
+      duration,
+      delay,
+      noExit,
+      animationKey,
+      once,
+      x,
+   }: Props<'x'>) => {
+      const [animations, setAnimations] = useAtom(state.animations);
+
+      const disabled = useMemo(() => {
+         if (once && animationKey && animations.includes(animationKey)) {
+            return true;
+         }
+         return false;
+      }, [animations, once, animationKey]);
+
+      useEffect(() => {
+         if (once && animationKey && !animations.includes(animationKey)) {
+            setAnimations([...animations, animationKey]);
+         }
+      }, [animations, once, animationKey]);
+
       return (
          <motion.div
-            initial={{ opacity: 0, x: x || 15 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={noExit ? undefined : { opacity: 0, x: x || 15 }}
+            initial={disabled ? false : { opacity: 0, x: x || 15 }}
+            animate={disabled ? false : { opacity: 1, x: 0 }}
+            exit={noExit || disabled ? undefined : { opacity: 0, x: x || 15 }}
             transition={{
                ease: 'easeInOut',
                duration: duration ?? 0.15,
@@ -55,12 +107,40 @@ const Animations = {
          </motion.div>
       );
    },
-   Scale: ({ children, className, delay, duration, scale }: Props<'scale'>) => {
+   Scale: ({
+      children,
+      className,
+      delay,
+      duration,
+      noExit,
+      animationKey,
+      once,
+      scale,
+   }: Props<'scale'>) => {
+      const [animations, setAnimations] = useAtom(state.animations);
+
+      const disabled = useMemo(() => {
+         if (once && animationKey && animations.includes(animationKey)) {
+            return true;
+         }
+         return false;
+      }, [animations, once, animationKey]);
+
+      useEffect(() => {
+         if (once && animationKey && !animations.includes(animationKey)) {
+            setAnimations([...animations, animationKey]);
+         }
+      }, [animations, once, animationKey]);
+
       return (
          <motion.div
-            initial={{ opacity: 0, scale: scale || 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: scale || 0 }}
+            initial={disabled ? false : { opacity: 0, scale: scale || 0 }}
+            animate={disabled ? false : { opacity: 1, scale: 1 }}
+            exit={
+               noExit || disabled
+                  ? undefined
+                  : { opacity: 0, scale: scale || 0 }
+            }
             transition={{
                ease: 'easeInOut',
                duration: duration ?? 0.15,
