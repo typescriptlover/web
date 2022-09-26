@@ -51,8 +51,13 @@ const Spotify = () => {
             </AnimatePresence>
             <AnimatePresence mode="wait">
                {spotifyError || !spotify || loading ? (
-                  <span className={clsx(loading && 'animate-pulse')}>
-                     <i className="text-xl text-green-500 fa-brands fa-spotify"></i>
+                  <span
+                     className={clsx(
+                        loading && 'animate-pulse',
+                        'text-xl text-green-500'
+                     )}
+                  >
+                     <i className="fa-brands fa-spotify"></i>
                   </span>
                ) : (
                   <Animations.Scale
