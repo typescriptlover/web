@@ -14,6 +14,7 @@ import Animations from '@/components/ui/Animations';
 import { useRouter } from 'next/router';
 
 import { usePreserveScroll } from '@/hooks/usePreserveScroll';
+import Spotify from '@/components/Spotify';
 
 const App = ({ Component, pageProps }: AppProps) => {
    const router = useRouter();
@@ -24,11 +25,12 @@ const App = ({ Component, pageProps }: AppProps) => {
       <Box>
          <Meta />
          <FontAwesome />
+         <Spotify />
          <AnimatePresence mode="wait" initial={false}>
             <Animations.Scale
                key={router.route}
                scale={0.75}
-               duration={0.4}
+               duration={0.3}
                className="flex flex-col w-full"
             >
                <Wrapper>

@@ -1,7 +1,7 @@
-import { ReactNode, RefObject, useEffect, useMemo } from 'react';
+import { ReactNode, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import clsx from 'clsx';
-import { useAtom } from 'jotai';
+import { atom, useAtom } from 'jotai';
 
 import * as state from '@/lib/state';
 
@@ -24,6 +24,15 @@ type LayoutProps = {
    layout: boolean | 'position' | 'size' | 'preserve-aspect' | undefined;
 } & DefaultProps;
 
+const animationsAdd = atom(
+   (get) => get(state.animations),
+   (get, set, key: string) => {
+      if (!get(state.animations).includes(key)) {
+         set(state.animations, [...get(state.animations), key]);
+      }
+   }
+);
+
 const Animations = {
    FadeY: ({
       children,
@@ -35,7 +44,7 @@ const Animations = {
       once,
       y,
    }: Props<'y'>) => {
-      const [animations, setAnimations] = useAtom(state.animations);
+      const [animations, add] = useAtom(animationsAdd);
 
       const disabled = useMemo(() => {
          if (once && animationKey && animations.includes(animationKey)) {
@@ -45,10 +54,10 @@ const Animations = {
       }, [animations, once, animationKey]);
 
       useEffect(() => {
-         if (once && animationKey && !animations.includes(animationKey)) {
-            setAnimations([...animations, animationKey]);
+         if (once && animationKey) {
+            add(animationKey);
          }
-      }, [animations, once, animationKey]);
+      }, [once, animationKey]);
 
       return (
          <motion.div
@@ -76,7 +85,7 @@ const Animations = {
       once,
       x,
    }: Props<'x'>) => {
-      const [animations, setAnimations] = useAtom(state.animations);
+      const [animations, add] = useAtom(animationsAdd);
 
       const disabled = useMemo(() => {
          if (once && animationKey && animations.includes(animationKey)) {
@@ -86,10 +95,10 @@ const Animations = {
       }, [animations, once, animationKey]);
 
       useEffect(() => {
-         if (once && animationKey && !animations.includes(animationKey)) {
-            setAnimations([...animations, animationKey]);
+         if (once && animationKey) {
+            add(animationKey);
          }
-      }, [animations, once, animationKey]);
+      }, [once, animationKey]);
 
       return (
          <motion.div
@@ -117,7 +126,7 @@ const Animations = {
       once,
       scale,
    }: Props<'scale'>) => {
-      const [animations, setAnimations] = useAtom(state.animations);
+      const [animations, add] = useAtom(animationsAdd);
 
       const disabled = useMemo(() => {
          if (once && animationKey && animations.includes(animationKey)) {
@@ -127,8 +136,8 @@ const Animations = {
       }, [animations, once, animationKey]);
 
       useEffect(() => {
-         if (once && animationKey && !animations.includes(animationKey)) {
-            setAnimations([...animations, animationKey]);
+         if (once && animationKey) {
+            add(animationKey);
          }
       }, [animations, once, animationKey]);
 

@@ -16,9 +16,9 @@ export const usePreserveScroll = () => {
             setTimeout(() => {
                window.scroll({
                   top: scrollPositions.current[url],
-                  behavior: 'smooth',
+                  behavior: 'auto',
                });
-            }, 450);
+            }, 325);
          }
       };
 
