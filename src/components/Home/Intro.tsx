@@ -59,7 +59,11 @@ const Intro = () => {
                <LayoutGroup>
                   <AnimatePresence>
                      {im && (
-                        <Animations.FadeX x={-25} duration={0.3}>
+                        <Animations.FadeX
+                           x={-25}
+                           duration={0.3}
+                           initial={false}
+                        >
                            Hi, I'm{' '}
                         </Animations.FadeX>
                      )}

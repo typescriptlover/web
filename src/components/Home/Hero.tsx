@@ -35,18 +35,18 @@ const Hero = () => {
                once={true}
                className="leading-7 text-zinc-300"
             >
-               I'm a 19-year-old{' '}
+               I'm a 20-year-old{' '}
                <span className="px-1.5 py-0.5 text-zinc-200 rounded-md bg-base-600/25">
-                  software engineer
+                  Software Engineer
                </span>{' '}
                born and living in{' '}
                <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 via-white to-blue-400">
                   Willemstad, Curacao
-               </span>{' '}
-               who specializes in full-stack development, focused on
-               architecting and building large scale applications, scalable
-               applications, beautiful interfaces and learning, using a wide
-               variety of skills to complete any task.
+               </span>
+               , specializing in full-stack development, focused on architecting
+               and building large-scale applications, efficient and scalable
+               applications, and beautiful interfaces, using a wide variety of
+               skills to complete any task.
             </Animations.FadeY>
          </div>
       </div>

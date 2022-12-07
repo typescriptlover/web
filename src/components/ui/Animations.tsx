@@ -13,6 +13,7 @@ type DefaultProps = {
    noExit?: true;
    animationKey?: string;
    once?: true;
+   initial?: false;
 };
 
 type Props<T extends string> = {
@@ -42,6 +43,7 @@ const Animations = {
       noExit,
       animationKey,
       once,
+      initial,
       y,
    }: Props<'y'>) => {
       const [animations, add] = useAtom(animationsAdd);
@@ -61,7 +63,7 @@ const Animations = {
 
       return (
          <motion.div
-            initial={disabled ? false : { opacity: 0, y: y || 15 }}
+            initial={initial || disabled ? false : { opacity: 0, y: y || 15 }}
             animate={disabled ? false : { opacity: 1, y: 0 }}
             exit={noExit || disabled ? undefined : { opacity: 0, y: y || 15 }}
             transition={{
@@ -83,6 +85,7 @@ const Animations = {
       noExit,
       animationKey,
       once,
+      initial,
       x,
    }: Props<'x'>) => {
       const [animations, add] = useAtom(animationsAdd);
@@ -102,7 +105,11 @@ const Animations = {
 
       return (
          <motion.div
-            initial={disabled ? false : { opacity: 0, x: x || 15 }}
+            initial={
+               initial === false || disabled
+                  ? false
+                  : { opacity: 0, x: x || 15 }
+            }
             animate={disabled ? false : { opacity: 1, x: 0 }}
             exit={noExit || disabled ? undefined : { opacity: 0, x: x || 15 }}
             transition={{
@@ -124,6 +131,7 @@ const Animations = {
       noExit,
       animationKey,
       once,
+      initial,
       scale,
    }: Props<'scale'>) => {
       const [animations, add] = useAtom(animationsAdd);
@@ -143,7 +151,11 @@ const Animations = {
 
       return (
          <motion.div
-            initial={disabled ? false : { opacity: 0, scale: scale || 0 }}
+            initial={
+               initial === false || disabled
+                  ? false
+                  : { opacity: 0, scale: scale || 0 }
+            }
             animate={disabled ? false : { opacity: 1, scale: 1 }}
             exit={
                noExit || disabled

@@ -15,6 +15,7 @@ import { useRouter } from 'next/router';
 
 import { usePreserveScroll } from '@/hooks/usePreserveScroll';
 import Spotify from '@/components/Spotify';
+import Toast from '@/components/Toast';
 
 const App = ({ Component, pageProps }: AppProps) => {
    const router = useRouter();
@@ -26,6 +27,7 @@ const App = ({ Component, pageProps }: AppProps) => {
          <Meta />
          <FontAwesome />
          <Spotify />
+         <Toast />
          <AnimatePresence mode="wait" initial={false}>
             <Animations.Scale
                key={router.route}
