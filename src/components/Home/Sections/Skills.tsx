@@ -17,7 +17,8 @@ const Skills = () => {
                   Skills
                </h1>
                <h2 className="text-sm text-zinc-400">
-                  A list of technologies, frameworks and tools i use.
+                  A list of technologies, frameworks and tools I use to develop
+                  with.
                </h2>
             </div>
             <div className="flex items-center justify-center flex-shrink-0 w-10 h-10 text-lg rounded-lg bg-base-800">

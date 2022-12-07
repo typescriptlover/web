@@ -3,41 +3,41 @@ import { Project } from '@/types/interfaces';
 const projects: Project[] = [
    {
       name: 'datapanel',
-      type: 'freelance',
-      description: 'Wrote a large, beautiful and performant web front.',
-      active: '2022-current',
+      type: 'work',
+      description: 'A neat, and performant web front for data manipulation.',
+      active: 'May 2022 - Dec 2022',
       route: 'datapanel',
    },
    {
-      name: 'discord.style',
-      type: 'freelance',
+      name: 'discordstyle',
+      type: 'work',
       description:
-         'Built and deployed a scalable backend, actively used by nK users.',
-      active: '2021-2022',
+         'A large-scale back end, actively used by 366,000 unique users.',
+      active: 'Mar 2021 - May 2022',
       route: 'discordstyle',
-   },
-   {
-      name: 'raye',
-      type: 'personal',
-      description:
-         'Built and architected a fast pub/sub server from scratch, inspired by redis.',
-      active: '2021-?',
-      route: 'raye',
    },
    {
       name: 'noca',
       type: 'personal',
       description:
-         'Wrote a serverless, infinitely spatial note canvas web app.',
-      active: '2021-?',
+         'Write and manage your thoughts in an infinitely spatial and interactive canvas.',
+      active: '2021-current',
       route: 'noca',
    },
    {
       name: 'curious',
       type: 'personal',
-      description: 'Built a full-stack questions and answers social app.',
-      active: '2021-?',
+      description:
+         'Interact with eachother through a social platform meant for curiosity.',
+      active: '2021-current',
       route: 'curious',
+   },
+   {
+      name: 'wheel',
+      type: 'personal',
+      description: 'Interface for creating and managing cronjobs.',
+      active: '2022-current',
+      route: 'wheel',
    },
 ];
 

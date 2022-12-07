@@ -12,8 +12,6 @@ interface ProjectProps {
 
 // TODO: make tags smoothly scrollable on the x axis
 const Project: FC<ProjectProps> = ({ project }) => {
-   const router = useRouter();
-
    return (
       <Link
          href={`/project/${project.route}`}
@@ -51,7 +49,6 @@ const Project: FC<ProjectProps> = ({ project }) => {
    );
 };
 
-// TODO: make project clickable to external project route
 const Projects: FC = () => {
    return (
       <div key="projects">
@@ -68,7 +65,7 @@ const Projects: FC = () => {
                   Projects
                </h1>
                <h2 className="text-sm text-zinc-400">
-                  A collection of my favorite personal and freelance projects.
+                  A collection of my personal and work projects I've developed.
                </h2>
             </div>
             <div className="flex items-center justify-center flex-shrink-0 w-10 h-10 text-lg rounded-lg bg-base-800">
