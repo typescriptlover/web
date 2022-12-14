@@ -84,7 +84,7 @@ const Contact = () => {
             >
                <a
                   target="_blank"
-                  href="/VigneshWadhwani.pdf"
+                  href="/resume.pdf"
                   className="py-2.5 flex justify-center items-center group tracking-tight ring-8 shadow-2xl ring-base-800 ring-opacity-20 text-[0.925rem] px-4 font-semibold rounded-xl bg-base-900 border-2 transition duration-200 ease-linear hover:border-transparent focus:border-transparent hover:ring-2 focus:ring-2 hover:ring-base-800 focus:ring-base-800 hover:ring-opacity-100 focus:ring-opacity-100 border-base-800"
                >
                   Resume
