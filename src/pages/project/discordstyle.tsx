@@ -1,5 +1,4 @@
 import Project from '@/layouts/Project';
-import { getProjectData } from '@/lib/helpers';
 
 const discordstyle = () => {
    return (

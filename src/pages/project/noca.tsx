@@ -1,6 +1,4 @@
-import projects from '@/data/projects';
 import Project from '@/layouts/Project';
-import { getProjectData } from '@/lib/helpers';
 
 const noca = () => {
    return (
