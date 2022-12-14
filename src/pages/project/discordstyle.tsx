@@ -6,6 +6,7 @@ const discordstyle = () => {
          name="discordstyle"
          description="Online library for finding and sharing Discord Templates."
          link="https://discord.style"
+         image="/img/discordstyle/browse.png"
          techs={[
             'TypeScript',
             'Node.js',
