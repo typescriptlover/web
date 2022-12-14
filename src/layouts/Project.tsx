@@ -31,7 +31,15 @@ const Project: FC<Props> = ({
          <Meta
             title={name}
             description={description}
-            canonical={SEO.canonical + 'project/' + name}
+            canonical={SEO.canonical + '/project/' + name}
+            images={[
+               {
+                  url: SEO.canonical + image,
+                  width: 1079,
+                  height: 551,
+                  type: 'image/png',
+               },
+            ]}
          />
          <div className="relative">
             <div className="absolute top-0 left-0 -ml-0 sm:-ml-[5rem] -mt-[2rem] sm:-mt-0">
