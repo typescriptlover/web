@@ -32,13 +32,6 @@ const projects: Project[] = [
       active: '2021-current',
       route: 'curious',
    },
-   {
-      name: 'wheel',
-      type: 'personal',
-      description: 'Interface for creating and managing cronjobs.',
-      active: '2022-current',
-      route: 'wheel',
-   },
 ];
 
 export default projects;

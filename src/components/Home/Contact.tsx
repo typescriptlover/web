@@ -75,6 +75,24 @@ const Contact = () => {
                   </span>
                </button>
             </Animations.FadeY>
+            <Animations.FadeY
+               y={25}
+               duration={0.4}
+               delay={1}
+               animationKey="resume"
+               once={true}
+            >
+               <a
+                  target="_blank"
+                  href="/VigneshWadhwani.pdf"
+                  className="py-2.5 flex justify-center items-center group tracking-tight ring-8 shadow-2xl ring-base-800 ring-opacity-20 text-[0.925rem] px-4 font-semibold rounded-xl bg-base-900 border-2 transition duration-200 ease-linear hover:border-transparent focus:border-transparent hover:ring-2 focus:ring-2 hover:ring-base-800 focus:ring-base-800 hover:ring-opacity-100 focus:ring-opacity-100 border-base-800"
+               >
+                  Resume
+                  <span className="ml-3 -mr-1 transition duration-200 ease-linear opacity-50 will-change-transform group-hover:scale-110 group-hover:opacity-100">
+                     <i className="fa-duotone fa-arrow-up-right-from-square"></i>
+                  </span>
+               </a>
+            </Animations.FadeY>
          </div>
          <div className="inline-flex items-center gap-x-4">
             <Animations.Scale

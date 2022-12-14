@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { NextSeo } from 'next-seo';
 
 import { SEO } from '@/lib/config';
+import { OpenGraphMedia } from 'next-seo/lib/types';
 
 interface Props {
    title?: string;
@@ -10,6 +11,7 @@ interface Props {
    canonical?: string;
    noindex?: boolean;
    nofollow?: boolean;
+   images?: OpenGraphMedia[];
 }
 
 const Meta: FC<Props> = (props) => (
@@ -33,6 +35,11 @@ const Meta: FC<Props> = (props) => (
             url: props.canonical || SEO.canonical,
             locale: SEO.locale,
             site_name: SEO.site_name,
+            images: props.images || SEO.images,
+         }}
+         twitter={{
+            site: SEO.canonical,
+            cardType: 'summary_large_image',
          }}
          noindex={props.noindex || false}
          nofollow={props.nofollow || false}

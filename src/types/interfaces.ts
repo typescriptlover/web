@@ -1,3 +1,5 @@
+import { OpenGraphMedia } from 'next-seo/lib/types';
+
 export interface LastFMRecentTracks {
    '@attr': LastFMRecentTracksAttr;
    track?: LastFMTrack[];
@@ -65,4 +67,15 @@ export interface Project {
    description: string;
    active: string;
    route: string;
+}
+
+export namespace Config {
+   export interface SEO {
+      site_name: string;
+      canonical: string;
+      title: string;
+      description: string;
+      locale: string;
+      images: OpenGraphMedia[];
+   }
 }
