@@ -40,10 +40,36 @@ module.exports = {
          animation: {
             wave: 'wave 1s ease-in-out infinite',
          },
+         typography: (theme) => ({
+            DEFAULT: {
+               css: {
+                  color: theme('colors.zinc.300'),
+                  code: {
+                     '@apply font-medium bg-base-900 text-white py-1 px-1.5 rounded-md':
+                        '',
+                  },
+                  'code::before': {
+                     content: '""',
+                  },
+                  'code::after': {
+                     content: '""',
+                  },
+                  blockquote: {
+                     '@apply text-base border-base-700': '',
+                  },
+                  'blockquote p:first-of-type::before': {
+                     content: '',
+                  },
+                  'blockquote p:first-of-type::after': {
+                     content: '',
+                  },
+               },
+            },
+         }),
       },
    },
    variants: {
       extend: {},
    },
-   plugins: [],
+   plugins: [require('@tailwindcss/typography')],
 };

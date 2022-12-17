@@ -1,10 +1,11 @@
-import { Project } from '@/types/interfaces';
+import { IProject } from '@/types/interfaces';
 
-const projects: Project[] = [
+const projects: IProject[] = [
    {
       name: 'datapanel',
       type: 'work',
-      description: 'A neat, and performant web front for data manipulation.',
+      description:
+         'An intuitive and performant web application for dataset manipulation.',
       active: 'May 2022 - Dec 2022',
       route: 'datapanel',
    },
@@ -12,7 +13,7 @@ const projects: Project[] = [
       name: 'discordstyle',
       type: 'work',
       description:
-         'A large-scale back end, actively used by 366,000 unique users.',
+         'A back-end application actively serving 366,000 unique users.',
       active: 'Mar 2021 - May 2022',
       route: 'discordstyle',
    },
@@ -28,7 +29,7 @@ const projects: Project[] = [
       name: 'curious',
       type: 'personal',
       description:
-         'Interact with eachother through a social platform meant for curiosity.',
+         'Interact with users on a platform designed to faciliate engagement with curiosity.',
       active: '2021-current',
       route: 'curious',
    },

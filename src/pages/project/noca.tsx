@@ -1,6 +1,15 @@
-import Project from '@/layouts/Project';
+import { NextPage } from 'next';
+import { MDXRemoteSerializeResult } from 'next-mdx-remote/dist/types';
 
-const noca = () => {
+import getProjectContent from '@/lib/getProjectContent';
+import Project from '@/layouts/Project';
+import getMDX from '@/lib/getMDX';
+
+interface Props {
+   content: MDXRemoteSerializeResult;
+}
+
+const noca: NextPage<Props> = ({ content }) => {
    return (
       <Project
          name="noca"
@@ -15,8 +24,16 @@ const noca = () => {
             'TailwindCSS',
             'Framer Motion',
          ]}
+         content={content}
       />
    );
+};
+
+export const getStaticProps = async () => {
+   const data = await getProjectContent('noca');
+   const content = await getMDX(data);
+
+   return { props: { content } };
 };
 
 export default noca;

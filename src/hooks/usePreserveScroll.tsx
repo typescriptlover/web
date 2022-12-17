@@ -19,6 +19,13 @@ export const usePreserveScroll = () => {
                   behavior: 'auto',
                });
             }, 325);
+         } else {
+            setTimeout(() => {
+               window.scroll({
+                  top: 0,
+                  behavior: 'auto',
+               });
+            }, 325);
          }
       };
 
@@ -29,5 +36,5 @@ export const usePreserveScroll = () => {
          router.events.off('routeChangeStart', onRouteChangeStart);
          router.events.off('routeChangeComplete', onRouteChangeComplete);
       };
-   }, [router]);
+   }, [router, scrollPositions]);
 };

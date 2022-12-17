@@ -1,30 +1,33 @@
+import { FC } from 'react';
+import { MDXRemote } from 'next-mdx-remote';
+import { MDXRemoteSerializeResult } from 'next-mdx-remote/dist/types';
+
 import Meta from '@/components/Meta';
 import Animations from '@/components/ui/Animations';
 import Link from '@/components/ui/Link';
 import { SEO } from '@/lib/config';
-import { FC, ReactNode } from 'react';
 import Box from './Box';
+import Palette from '@/components/ui/Palette';
+import Font from '@/components/ui/Font';
 
 interface Props {
    name: string;
    description?: string;
-   tags?: string[];
-   children?: ReactNode;
    techs?: string[];
    image?: string;
    link?: string;
    github?: string;
+   content?: MDXRemoteSerializeResult;
 }
 
 const Project: FC<Props> = ({
    name,
    description,
-   tags,
-   children,
    techs,
    image,
    link,
    github,
+   content,
 }) => {
    return (
       <Box>
@@ -67,12 +70,12 @@ const Project: FC<Props> = ({
                {description && (
                   <Animations.FadeY
                      delay={0.2}
-                     className="mt-2 block"
+                     className="block mt-2"
                      y={10}
                      duration={0.4}
                   >
-                     <div className="font-medium text-zinc-300 tracking-tight font-karla">
-                        <span className="mr-2 text-zinc-500 text-sm rotate-6 inline-block">
+                     <div className="font-medium tracking-tight text-zinc-300 font-karla">
+                        <span className="inline-block mr-2 text-sm text-zinc-500 rotate-6">
                            <i className="fa-solid fa-quote-left"></i>
                         </span>
                         {description}
@@ -80,15 +83,15 @@ const Project: FC<Props> = ({
                   </Animations.FadeY>
                )}
                {(link || github) && (
-                  <div className="mt-2 flex items-center gap-x-4">
+                  <div className="flex items-center mt-2 gap-x-4">
                      {link && (
                         <Animations.FadeY y={10} delay={0.4} duration={0.4}>
                            <a
                               target="_blank"
                               href={link}
-                              className="font-medium text-zinc-400 transition duration-200 ease-linear hover:text-zinc-200 hover:underline tracking-tight font-karla"
+                              className="font-medium tracking-tight transition duration-200 ease-linear text-zinc-400 hover:text-zinc-200 hover:underline font-karla"
                            >
-                              <span className="text-sm mr-1 text-zinc-500">
+                              <span className="mr-1 text-sm text-zinc-500">
                                  <i className="fa-solid fa-fw fa-link"></i>
                               </span>
                               {link}
@@ -100,9 +103,9 @@ const Project: FC<Props> = ({
                            <a
                               target="_blank"
                               href={`https://github.com/typescriptlover/${github}`}
-                              className="font-medium text-zinc-400 transition duration-200 ease-linear hover:text-zinc-200 hover:underline tracking-tight font-karla"
+                              className="font-medium tracking-tight transition duration-200 ease-linear text-zinc-400 hover:text-zinc-200 hover:underline font-karla"
                            >
-                              <span className="text-sm mr-1 text-zinc-500">
+                              <span className="mr-1 text-sm text-zinc-500">
                                  <i className="fa-brands fa-fw fa-github"></i>
                               </span>
                               {github}
@@ -114,12 +117,12 @@ const Project: FC<Props> = ({
                <hr className="my-5 border-t border-base-900" />
                {techs && techs.length && (
                   <div>
-                     <h2 className="text-sm uppercase font-semibold text-zinc-400">
+                     <h2 className="text-sm font-semibold uppercase text-zinc-400">
                         technologies
                      </h2>
                      <div className="mt-2.5 flex flex-wrap gap-2">
                         {techs.map((tech) => (
-                           <span className="text-xs font-medium bg-base-850 rounded-lg py-1 px-2">
+                           <span className="px-2 py-1 text-xs font-medium rounded-lg bg-base-850">
                               {tech}
                            </span>
                         ))}
@@ -127,8 +130,19 @@ const Project: FC<Props> = ({
                   </div>
                )}
                {image && (
-                  <div className="mt-5 rounded-2xl overflow-hidden shadow-2xl border border-base-900">
+                  <div className="mt-5 overflow-hidden border shadow-2xl rounded-2xl border-base-900">
                      <img src={image} className="w-full h-full" />
+                  </div>
+               )}
+               {content && (
+                  <div className="mt-6 prose prose-invert">
+                     <MDXRemote
+                        {...content}
+                        components={{
+                           Palette: Palette,
+                           Font: Font,
+                        }}
+                     />
                   </div>
                )}
             </div>

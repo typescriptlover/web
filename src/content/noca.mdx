@@ -1,0 +1,84 @@
+> This project is actively being worked on
+
+## 🧠 Concept
+
+Allowing writers, thinkers or anyone to express and manage their thoughts through notes on an interactive and easily navigable spatial canvas, with a sleek and fast interface.
+
+## 💻 Design
+
+_Simplicity_, _consistency_, and _intuitiveness_ are the **main focus**.
+
+Let's break down the **design system** one by one:
+
+### Colors
+
+A _clean_ and _consistent_ **dark mode** palette.
+
+#### Background and Borders
+
+`Black Pearl` being the **main** color, and off of that using **2% tint** on each color in the palette for _consistency_.
+
+<Palette
+   colors={[
+      '#393c3d',
+      '#343739',
+      '#303234',
+      '#2b2d2f',
+      '#26282a',
+      '#212325',
+      '#1c1f20',
+      '#171a1c',
+      '#121517',
+      '#0d1012',
+      '#080b0d',
+   ]}
+/>
+
+#### Text
+
+a _simple_ `White` for the **main** color, and tailwind's `Zinc` for **shading**.
+
+<Palette
+   colors={['#FFFFFF', '#f4f4f5', '#e4e4e7', '#d4d4d8', '#a1a1aa', '#71717a']}
+/>
+
+### Font
+
+I find `Inter` to be a _modern_ font that adds a _soft_, and _sophisticated_ touch to any design. Its excellent _readability_ makes it a go-to choice for many of my **design projects**.
+
+<Font />
+
+### Icons
+
+Incorporating icons to represent **actions** and utilizing **tooltips** to put a name to them makes an interface _clean_ and _compact_, and whenever I'm creating an **icon-heavy** interface I use [FontAwesome](https://fontawesome.com).
+
+## 🖼 Canvas
+
+A different but scalable approach to a spatial canvas developed from scratch using pure Elements, DOM events, React refs, React hooks and State management without relying on the Canvas API.
+
+I figured using the Canvas API here wasn't entirely necessary and there could be a different approach and customizable way of developing a reactive canvas from scratch, so I did, and in doing so challenged myself to approach several problems and learned a lot, whilst also making a lot of things possible and easier to implement.
+
+## 🛢 Storage
+
+I didn't want user data stored anywhere, and I wanted the user to have full control of their own data, whilst also being serverless, costless and instant.
+
+### First approach
+
+I implemented a React hook for easily updating and reading data from the browsers localStorage, and used it for canvas and notes storage.
+
+I later realized that this approach had several long-term drawbacks with notes storage:
+
+-  Storing large amounts of JSON stringified objects inside a localStorage key.
+-  Having to completely rewrite the stringified value for said key every time an update happens.
+-  Error handling on incorrect or faulty data.
+-  Parsing and traversing an entire object to find one note and update it.
+
+_I didn't like it._
+
+### Working approach
+
+I researched on best practices for locally storing data, and came across a library called **PouchDB** that allows me to do exactly what I want with notes storage, whilst also giving me type-safety.
+
+I kept canvas storage inside localStorage because the data itself won't become larger or complex, but rewrote the entire notes storage system for scale.
+
+_And now I'm happy._

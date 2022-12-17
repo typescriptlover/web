@@ -1,13 +1,13 @@
 import { FC, useState } from 'react';
 
 import Animations from '@/components/ui/Animations';
-import { Project } from '@/types/interfaces';
+import { IProject } from '@/types/interfaces';
 import projects from '@/data/projects';
 import { useRouter } from 'next/router';
 import Link from '@/components/ui/Link';
 
 interface ProjectProps {
-   project: Project;
+   project: IProject;
 }
 
 // TODO: make tags smoothly scrollable on the x axis

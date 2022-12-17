@@ -43,10 +43,10 @@ const Hero = () => {
                <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 via-white to-blue-400">
                   Willemstad, Curacao
                </span>
-               , specializing in full-stack development, focused on architecting
-               and building large-scale applications, efficient and scalable
-               applications, and beautiful interfaces, using a wide variety of
-               skills to complete any task.
+               , specializing in full-stack development, focused on designing
+               and developing efficient and scalable front-end and back-end
+               applications, using a wide variety of skills to complete any
+               task.
             </Animations.FadeY>
          </div>
       </div>

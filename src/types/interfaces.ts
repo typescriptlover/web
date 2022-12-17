@@ -61,7 +61,7 @@ export interface LastFMResponseBody {
    recenttracks: LastFMRecentTracks;
 }
 
-export interface Project {
+export interface IProject {
    name: string;
    type: string;
    description: string;
